@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MonoliticoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MonoliticoApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(MonoliticoApplication.class, args);
+  }
 }
