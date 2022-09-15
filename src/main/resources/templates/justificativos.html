@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Justificativos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #674ea7"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">CookiesChile</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="/horarios">Horarios</a>
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="/justificativos"
+              >Justificativos</a
+            >
+            <a class="nav-link" href="/horasExtras">Horas Extras</a>
+            <a class="nav-link" href="/sueldos">Sueldos</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="d-flex justify-content-center p-5">
+      <h1>Ingreso de justificativos</h1>
+    </div>
+
+    <div class="container text-center">
+      <form class="row g-3 needs-validation">
+        <div class="mb-3">
+          <label for="rut" class="form-label">Rut del empleado</label>
+          <select class="form-select" aria-label="Select rut" id="rut" required>
+            <option selected></option>
+            <option value="1">Rut1</option>
+            <option value="2">Rut2</option>
+            <option value="3">Rut3</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha de justificativo</label>
+          <input
+            type="date"
+            id="fecha"
+            name="trip-start"
+            value="2022-01-01"
+          />
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

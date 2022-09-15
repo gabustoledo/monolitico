@@ -16,17 +16,10 @@ public class UserController {
   @Autowired
   UserService userService;
 
-  @GetMapping("/")
-  public String home(Model model) {
+  @GetMapping("/user")
+  public String user(Model model) {
     // ArrayList<UserEntity> usuarios = userService.getUsers();
     // model.addAttribute("usuarios", usuarios);
-    return "index";
-  }
-
-	@GetMapping("/test")
-  public String test(Model model) {
-    // ArrayList<UserEntity> usuarios = userService.getUsers();
-    // model.addAttribute("usuarios", usuarios);
-    return "test";
+    return "user";
   }
 }
