@@ -17,9 +17,7 @@ public class MonthEntity {
   @Column(unique = true, nullable = false)
   private Long id;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user.rut")
-  private UserEntity user;
+  private String user_rut;
 
   private String mes;
   private int year;

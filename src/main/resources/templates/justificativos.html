@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Justificativos</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -49,25 +48,32 @@
     </div>
 
     <div class="container text-center">
-      <form class="row g-3 needs-validation">
+      <form
+        class="row g-3 needs-validation"
+        method="POST"
+        enctype="application/x-www-form-urlencoded"
+        action="/api/justification/create"
+      >
         <div class="mb-3">
           <label for="rut" class="form-label">Rut del empleado</label>
-          <select class="form-select" aria-label="Select rut" id="rut" required>
+          <select
+            class="form-select"
+            aria-label="Select rut"
+            name="user_rut"
+            required
+          >
             <option selected></option>
-            <option value="1">Rut1</option>
-            <option value="2">Rut2</option>
-            <option value="3">Rut3</option>
+            <option
+              th:each="usuario : ${usuarios}"
+              th:value="${usuario.rut}"
+              th:text="${usuario.rut}"
+            ></option>
           </select>
         </div>
 
         <div class="mb-3">
           <label for="fecha" class="form-label">Fecha de justificativo</label>
-          <input
-            type="date"
-            id="fecha"
-            name="trip-start"
-            value="2022-01-01"
-          />
+          <input type="date" id="fecha" name="fecha" value="2022-01-01" />
         </div>
 
         <div class="mb-3">

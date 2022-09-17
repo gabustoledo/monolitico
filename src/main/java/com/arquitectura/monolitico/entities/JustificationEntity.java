@@ -1,6 +1,5 @@
 package com.arquitectura.monolitico.entities;
 
-import java.util.Date;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,9 +17,7 @@ public class JustificationEntity {
   @Column(unique = true, nullable = false)
   private Long id;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user.rut")
-  private UserEntity user;
+  private String user_rut;
 
-  private Date fecha;
+  private String fecha;
 }

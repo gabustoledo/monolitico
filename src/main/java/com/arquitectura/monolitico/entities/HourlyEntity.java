@@ -1,6 +1,5 @@
 package com.arquitectura.monolitico.entities;
 
-import java.util.Date;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,13 +17,11 @@ public class HourlyEntity {
   @Column(unique = true, nullable = false)
   private Long id;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user.rut")
-  private UserEntity user;
+  private String user_rut;
 
-  private Date fecha;
-  private Date ingreso;
-  private Date salida;
+  private String fecha;
+  private String ingreso;
+  private String salida;
   private int descuentoIngreso;
   private int descuentoSalida;
   private Boolean inasistencia;

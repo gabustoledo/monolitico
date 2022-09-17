@@ -1,8 +1,9 @@
 package com.arquitectura.monolitico.controllers;
 
-// import com.arquitectura.monolitico.entities.UserEntity;
+import com.arquitectura.monolitico.entities.ExtraHourEntity;
+import com.arquitectura.monolitico.entities.UserEntity;
 import com.arquitectura.monolitico.services.UserService;
-// import java.util.ArrayList;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,11 +34,16 @@ public class ViewsController {
 
   @GetMapping("/justificativos")
   public String justificativos(Model model) {
+    ArrayList<UserEntity> usuarios = userService.getUsers();
+    model.addAttribute("usuarios", usuarios);
     return "justificativos";
   }
 
   @GetMapping("/horasExtras")
   public String horasExtras(Model model) {
+    ArrayList<UserEntity> usuarios = userService.getUsers();
+    model.addAttribute("usuarios", usuarios);
+    model.addAttribute("extraHourEntity", new ExtraHourEntity());
     return "horasExtras";
   }
 
