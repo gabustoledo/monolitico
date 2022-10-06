@@ -1,10 +1,10 @@
 package com.arquitectura.monolitico.entities;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.util.List;
 
 @Component
 public class FileContext {
@@ -19,7 +19,7 @@ public class FileContext {
     return this.strategy;
   }
 
-  public List<HourlyInit> readFile(MultipartFile file) throws IOException {
+  public List<Horario> readFile(MultipartFile file) throws IOException {
     return this.strategy.readFile(file);
   }
 }

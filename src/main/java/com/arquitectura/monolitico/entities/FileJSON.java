@@ -1,15 +1,16 @@
 package com.arquitectura.monolitico.entities;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.springframework.web.multipart.MultipartFile;
 
 public class FileJSON implements FileStrategy {
 
   @Override
-  public List<HourlyInit> readFile(MultipartFile file) throws IOException {
+  public List<Horario> readFile(MultipartFile file) throws IOException {
     String content = new String(file.getBytes());
     String replace = content.replace("[", "");
     String replace1 = replace.replace("]", "");
@@ -25,14 +26,17 @@ public class FileJSON implements FileStrategy {
     );
 
     int cantidad = myList.size();
-    List<HourlyInit> empleados = new ArrayList<HourlyInit>();
+    List<Horario> empleados = new ArrayList<Horario>();
 
     for (int i = 0; i <= cantidad - 3; i += 3) {
-      HourlyInit empl = new HourlyInit(
-        myList.get(i).replaceAll("\\s", ""),
-        myList.get(i + 1).replaceAll("\\s", ""),
-        myList.get(i + 2).replaceAll("\\s", "")
-      );
+
+      Factory factory = new Factory();
+
+      Horario empl = factory.createHorario("HourlyInit");
+
+      empl.setFecha(myList.get(i).replaceAll("\\s", ""));
+      empl.setHora(myList.get(i + 1).replaceAll("\\s", ""));
+      empl.setRun(myList.get(i + 2).replaceAll("\\s", ""));
 
       empleados.add(empl);
     }

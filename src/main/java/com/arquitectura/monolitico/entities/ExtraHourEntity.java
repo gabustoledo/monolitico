@@ -1,16 +1,17 @@
 package com.arquitectura.monolitico.entities;
 
-import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "extraHour")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExtraHourEntity {
+public class ExtraHourEntity{
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,5 +22,4 @@ public class ExtraHourEntity {
 
   private String fecha;
   private int cantidad;
-  private Boolean completada = false;
 }

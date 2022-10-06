@@ -1,16 +1,17 @@
 package com.arquitectura.monolitico.entities;
 
-import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "justification")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class JustificationEntity {
+public class JustificationEntity{
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

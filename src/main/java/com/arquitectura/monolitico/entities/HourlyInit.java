@@ -1,10 +1,12 @@
 package com.arquitectura.monolitico.entities;
 
-public class HourlyInit {
+public class HourlyInit extends Horario{
 
   private String fecha;
   private String hora;
   private String run;
+
+  public HourlyInit(){}
 
   public HourlyInit(String fecha, String hora, String run) {
     this.fecha = fecha;
