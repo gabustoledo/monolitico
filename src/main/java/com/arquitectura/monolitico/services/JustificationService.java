@@ -17,7 +17,9 @@ public class JustificationService {
     return (ArrayList<JustificationEntity>) justificationRepository.findAll();
   }
 
-  public JustificationEntity saveJustification(JustificationEntity justification) {
+  public JustificationEntity saveJustification(
+    JustificationEntity justification
+  ) {
     return justificationRepository.save(justification);
   }
 

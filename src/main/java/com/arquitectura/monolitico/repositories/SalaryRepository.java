@@ -1,9 +1,8 @@
 package com.arquitectura.monolitico.repositories;
 
-import com.arquitectura.monolitico.entities.ExtraHourEntity;
+import com.arquitectura.monolitico.entities.SalaryEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ExtraHourRepository
-  extends CrudRepository<ExtraHourEntity, Long> {}
+public interface SalaryRepository extends CrudRepository<SalaryEntity, Long> {}

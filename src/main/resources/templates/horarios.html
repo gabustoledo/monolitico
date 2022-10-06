@@ -46,28 +46,43 @@
     </div>
 
     <div class="container text-center">
-      <form class="row g-3 needs-validation">
+      <form
+        class="row g-3 needs-validation"
+        method="POST"
+        enctype="multipart/form-data"
+        action="/api/file/read"
+      >
         <div class="mb-3">
-					<label for="formFile" class="form-label">Archivo Operaciones</label>
+          <label for="formFile" class="form-label"
+            >Archivo Operaciones (JSON)</label
+          >
           <input
             type="file"
             class="form-control"
             aria-label="file example"
-						id="archivoOperaciones"
+            id="archivoOperaciones"
+            name="fileJSON"
             required
           />
-          <div class="invalid-feedback">Debe seleccionar el archivo HORAS.JSON</div>
+          <div class="invalid-feedback">
+            Debe seleccionar el archivo HORAS.JSON
+          </div>
         </div>
         <div class="mb-3">
-					<label for="formFile" class="form-label">Archivo Administrativos</label>
+          <label for="formFile" class="form-label"
+            >Archivo Administrativos (TXT)</label
+          >
           <input
             type="file"
             class="form-control"
             aria-label="file example"
-						id="archivoAdministrativos"
+            id="archivoAdministrativos"
+            name="fileTXT"
             required
           />
-          <div class="invalid-feedback">Debe seleccionar el archivo DATA.TXT</div>
+          <div class="invalid-feedback">
+            Debe seleccionar el archivo DATA.TXT
+          </div>
         </div>
 
         <div class="mb-3">
@@ -75,6 +90,5 @@
         </div>
       </form>
     </div>
-
   </body>
 </html>

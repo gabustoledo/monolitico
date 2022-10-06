@@ -2,9 +2,7 @@ package com.arquitectura.monolitico.controllers;
 
 import com.arquitectura.monolitico.entities.UserEntity;
 import com.arquitectura.monolitico.services.UserService;
-
 import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

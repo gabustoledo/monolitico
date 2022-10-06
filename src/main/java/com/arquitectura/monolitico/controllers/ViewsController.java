@@ -1,7 +1,9 @@
 package com.arquitectura.monolitico.controllers;
 
 import com.arquitectura.monolitico.entities.ExtraHourEntity;
+import com.arquitectura.monolitico.entities.SalaryEntity;
 import com.arquitectura.monolitico.entities.UserEntity;
+import com.arquitectura.monolitico.services.SalaryService;
 import com.arquitectura.monolitico.services.UserService;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class ViewsController {
 
   @Autowired
   UserService userService;
+
+  @Autowired
+  SalaryService salaryService;
 
   @GetMapping("/")
   public String home(Model model) {
@@ -49,6 +54,8 @@ public class ViewsController {
 
   @GetMapping("/sueldos")
   public String sueldos(Model model) {
+    ArrayList<SalaryEntity> salarios = salaryService.getSalary();
+    model.addAttribute("salarios", salarios);
     return "sueldos";
   }
 }

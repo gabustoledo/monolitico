@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Sueldos</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -42,7 +41,48 @@
     </nav>
 
     <div class="d-flex justify-content-center p-5">
-      <h1>Presentacion de Sueldos!!</h1>
+      <div class="container-sm">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Rut</th>
+              <th>Nombre</th>
+              <th>Area</th>
+              <th>Categoria</th>
+              <th>Tiempo (agnos)</th>
+              <th>Sueldo Fijo</th>
+              <th>Bono HE</th>
+              <th>Bono TS</th>
+              <th>Bono P</th>
+              <th>Desc Ingr</th>
+              <th>Desc Sal</th>
+              <th>Sueldo Bruto</th>
+              <th>Prevision</th>
+              <th>Salud</th>
+              <th>Sueldo Final</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="sueldo:${salarios}">
+              <td th:text="${sueldo.rut}"></td>
+              <td th:text="${sueldo.nombre} + ' ' + ${sueldo.apellido}"></td>
+              <td th:text="${sueldo.area}"></td>
+              <td th:text="${sueldo.categoria}"></td>
+              <td th:text="${sueldo.tiempoServicio}"></td>
+              <td th:text="${sueldo.sueldoFijo}"></td>
+              <td th:text="${sueldo.bonoHorasExtras}"></td>
+              <td th:text="${sueldo.bonoTiempoServicio}"></td>
+              <td th:text="${sueldo.bonoPuntualidad}"></td>
+              <td th:text="${sueldo.descuentoIngreso}"></td>
+              <td th:text="${sueldo.descuentoSalida}"></td>
+              <td th:text="${sueldo.sueldoBruto}"></td>
+              <td th:text="${sueldo.prevision}"></td>
+              <td th:text="${sueldo.salud}"></td>
+              <td th:text="${sueldo.sueldoFinal}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>

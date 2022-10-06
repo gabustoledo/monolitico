@@ -17,8 +17,9 @@ public class SalaryEntity {
   @Column(unique = true, nullable = false)
   private Long id;
 
-  private String user_rut;
-
+  private String rut;
+  private String nombre;
+  private String apellido;
   private String categoria;
   private int tiempoServicio;
   private String area;
@@ -32,6 +33,10 @@ public class SalaryEntity {
   private int prevision;
   private int salud;
   private int sueldoFinal;
-  private String mes;
-  private int year;
+  private String fechaIngreso;
+  private int diasTrabajados;
+  private int ingresoPuntual;
+  private int salidaPuntual;
+  private int porcentajeIngreso;
+  private int porcentajeSalida;
 }
